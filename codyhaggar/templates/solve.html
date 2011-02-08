@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% load hili %}
+{% load typogrify_tags %}
+
+{% block panel %}
+{{ block.super }}
+<span>yay!</span>
+{% endblock %}
+
+{% block lc %}
+
+{% include "challenge.html" %}
+{% endblock %}
+
+{% block rc %}
+<h1>Like a boss!</h1>
+<ul>
+<form action="{% url solve-challenge challenge_id %}" method="post">
+{% csrf_token %}
+{{ form.as_ul }}
+<input type="submit" value="I am awesome"/>
+</form>
+</ul>
+{% endblock %}

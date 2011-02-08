@@ -1,0 +1,17 @@
+drwxr-xr-x  17 adam  staff     578 Feb  8 19:16 .
+drwxr-xr-x  48 adam  staff    1632 Feb  8 18:43 ..
+drwxr-xr-x   7 adam  staff     238 Feb  8 19:16 BeautifulSoup-3.2.0-py2.6.egg-info
+-rw-r--r--   1 adam  staff   79448 Feb  8 19:16 BeautifulSoup.py
+-rw-r--r--   1 adam  staff   74143 Feb  8 19:16 BeautifulSoup.pyc
+-rw-r--r--   1 adam  staff   37439 Feb  8 19:16 BeautifulSoupTests.py
+-rw-r--r--   1 adam  staff   44124 Feb  8 19:16 BeautifulSoupTests.pyc
+drwxr-xr-x   7 adam  staff     238 Feb  8 18:43 Django-1.2.4-py2.6.egg-info
+drwxr-xr-x   7 adam  staff     238 Feb  8 19:16 Markdown-2.0.3-py2.6.egg-info
+drwxr-xr-x   9 adam  staff     306 Feb  8 19:10 Pygments-1.4-py2.6.egg-info
+drwxr-xr-x  20 adam  staff     680 Feb  8 18:56 django
+-rw-r--r--   1 adam  staff     237 Feb  8 18:43 easy-install.pth
+drwxr-xr-x  25 adam  staff     850 Feb  8 19:16 markdown
+drwxr-xr-x   4 adam  staff     136 Feb  8 18:43 pip-0.8.1-py2.6.egg
+drwxr-xr-x  30 adam  staff    1020 Feb  8 19:10 pygments
+-rw-r--r--   1 adam  staff  333447 Dec 29 15:01 setuptools-0.6c11-py2.6.egg
+-rw-r--r--   1 adam  staff      30 Feb  8 18:43 setuptools.pth

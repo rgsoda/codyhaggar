@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% load hili %}
+{% load lurks %}
+{% load typogrify_tags %}
+
+{% block lc %}
+{% include "challenge.html" %}
+{% endblock %}
+
+{% block rc %}
+{% with challenge|lurked_by:user as lurked %}
+<h2>Solutions:</h2>
+{% if not lurked %}
+<p>
+<a href="{% url solve-challenge challenge.id %}">Solve now!</a>
+</p>
+{% endif %}
+{% if solutions %}
+<blockquote>
+{% if not lurked %}
+<h3>Warning!</h3>
+<p><strong>Lurking solutions will block you from adding one!</strong></p>
+{% endif %}
+</blockquote>
+{% for solution in solutions %}
+    {% if solution.created_by == user %}
+    <strong>&rarr; Your solution:</strong><br/>
+        {% include "solution.html" %}
+    {% else %}
+        {% if lurked %}
+        <strong>&rarr; {{ solution.created_by }}</strong><br/>
+            {% include "solution.html" %}
+        {% else %}
+            &rarr; Unseen solution by {{ solution.created_by }}
+        {% endif %}
+        <br/>
+    {% endif %}
+{% endfor %}
+{% if lurked %}
+Meh. You've lurked.
+{% else %}
+<p>
+    <a href="{% url lurk-challenge challenge.id %}"><span class="more">I give up. LURK NOW!</span></a>
+</p>
+{% endif %}
+{% else %}
+No solutions so far.
+{% endif %}
+{% endwith %}
+{% endblock %}

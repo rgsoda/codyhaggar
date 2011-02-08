@@ -1,0 +1,27 @@
+{% load hili %}
+{% load lurks %}
+<h2>
+    #{{ challenge.id }} {{ challenge.title }}
+    <span class="small">by {{ challenge.created_by }}</span>
+</h2>
+<blockquote>
+    {{ challenge.task_description|linebreaks }}
+</blockquote>
+{% if not challenge_id %}
+{% if not challenge|lurked_by:user %}
+<span class="more">
+    <a href="{% url solve-challenge challenge.id %}">Solve</a>
+{% if user == challenge.created_by %}
+| <a href="{% url edit-challenge challenge.id %}">Edit</a></span>
+{% endif %}
+{% endif %}
+{% endif %}
+<h3>Example input:</h3>
+{% code %}
+    {{ challenge.ex_input }}
+{% endcode %}
+<h3>Example output:</h3>
+{% code %}
+    {{ challenge.ex_output }}
+{% endcode %}
+

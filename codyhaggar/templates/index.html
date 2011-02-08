@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+{% load typogrify_tags %}
+{% load pagination_tags %}
+{% autopaginate object_list %}
+
+{% block panel %}
+{{ block.super }}
+<a href="{% url add-challenge %}">add challenge</a>
+{% endblock %}
+
+{% block lc %}
+<h1>Challenges</h1>
+{% for challenge in object_list %}
+{% include "challenge.html" %}
+{% endfor %}
+
+
+{% endblock %}
+
+{% block rc %}
+<ul>
+    {% for solution in solutions %}
+    <li><strong>{{ solution.created_by }}</strong>
+        added a solution for <a
+            href="{% url display-challenge solution.challenge.id %}">{{ solution.challenge }}</a></li>
+    {% if user == solution.created_by %}
+    {% endif %}
+    {% endfor %}
+</ul>
+{% endblock %}
+{% block extra_content_bottom %}
+ <div class="grid_24">{% paginate %}</div>
+ <div class="clear"></div>
+{% endblock %}
+

@@ -1,0 +1,43 @@
+body {
+    color: #444;
+}
+
+h1,h2,h3,h4,h5,h6 { color: #000; }
+h2 { border-bottom: 1px solid #aaa; }
+h3,h4,h5,h6 { border-bottom: 1px solid #ddd; }
+
+#header a {
+    background: red;
+    color: #fff;
+    font-size: 44px;
+    text-decoration: none;
+    padding: 2px;
+}
+
+#panel {
+    font-size: 11px;
+    text-align: right;
+}
+
+span.more {
+    display: block;
+    text-align: right;
+    font-size: 11px;
+    padding: 10px;
+}
+
+ul, li { list-style-type: none; }
+label { display: block; }
+input[type=text], textarea { padding: 5px; width: 100%; }
+input[type=submit] { float: right; font-weight: bold; }
+
+.small { font-size: 10px; }
+h3 { color: #666; }
+
+.divider {
+    display: block;
+    width: 100%;
+    background: #eee;
+    height: 4px;
+}
+

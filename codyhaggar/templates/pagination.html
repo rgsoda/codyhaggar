@@ -1,0 +1,48 @@
+
+{% if is_paginated %}
+{# right     #}
+
+<ul class="paginate">
+    {% if page_obj.has_previous %}
+
+	<li>
+		<a href="?page={{ page_obj.previous_page_number }}{{ getvars }}{{ hashtag }}" title="_" class="btn black">
+			<span style=" display:block; background: url({{ MEDIA_URL }}images/icons/ico-prev.png) no-repeat; height:20px; min-height:20px; width:10px;">
+				&nbsp;
+			</span>
+		</a>
+	</li>
+
+    {% endif %}
+
+
+
+    {% for page in pages %}
+        {% if page %}
+            {% ifequal page page_obj.number %}
+            <li><a style="color: #5997FA;" href="?page={{ page }}{{ getvars }}{{ hashtag }}" title="_" class="btn black">{{ page }}</a></li>
+            {% else %}
+                <li><a href="?page={{ page }}{{ getvars }}{{ hashtag }}" title="_" class="btn black">{{ page }}</a></li>
+            {% endifequal %}
+        {% else %}
+            <li><a title="_" class="btn black" href="#">...</a></li>
+        {% endif %}
+    {% endfor %}
+
+
+    {# <li><a href="?page=1" title="_" class="btn black">1</a></li> #}
+    {#  #}
+    {# <li><a href="?page=last" title="_" class="btn black">...</a></li> #}
+
+	{% if page_obj.has_next %}
+	<li>
+		<a href="?page={{ page_obj.next_page_number }}{{ getvars }}{{ hashtag }}" title="_" class="btn black">
+			<span style=" display:block; background: url({{ MEDIA_URL }}images/icons/ico-next.png) no-repeat; height:20px; min-height:20px; width:10px;">
+				&nbsp;
+			</span>
+		</a>
+	</li>
+	{% endif %}
+</ul>
+
+{% endif %}

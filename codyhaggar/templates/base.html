@@ -1,0 +1,41 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html>
+    <head>
+        <link rel="stylesheet" href="/static/css/reset.css" />
+        <link rel="stylesheet" href="/static/css/text.css" />
+        <link rel="stylesheet" href="/static/css/960_24_col.css" />
+        <link rel="stylesheet" href="/static/css/custom.css" />
+    </head>
+    <body>
+       <div class="container_24">
+           <div class="grid_10" id="header">
+               <h1><a href="{% url index %}">codyhaggar</a></h1>
+           </div>
+           <div class="grid_14" id="panel">
+               {% block panel %}
+                   {% if user.is_authenticated %}
+                   <span>hello, <strong>{{ user.username }}</strong></span>
+                   {% else %}
+                   <span><a href="#">login</a></span>
+                   {% endif %}
+               {% endblock %}
+           </div>
+           <div class="clear"></div>
+           <div class="grid_11">
+               {% block lc %}
+                    block:lc
+               {% endblock %}
+           </div>
+           <div class="grid_1 alpha omega">&nbsp;</div>
+           <div class="grid_12">
+               {% block rc %}
+                    block:rc
+               {% endblock %}
+           </div>
+           <div class="clear"></div>
+           {% block extra_content_bottom %}
+           {% endblock %}
+       </div>
+    </body>
+</html>
